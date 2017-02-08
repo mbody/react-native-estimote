@@ -2,8 +2,8 @@
  * @providesModule RNEstimote
  * @flow
  */
-'use strict';
 
-var NativeRNEstimote = require('NativeModules').RNEstimote;
+var React = require('react-native')
+var NativeRNEstimote = React.NativeModules.RNEstimote
 
-module.exports = NativeRNEstimote;
+module.exports = NativeRNEstimote

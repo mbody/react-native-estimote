@@ -186,9 +186,9 @@ RCT_EXPORT_METHOD(requestStateForRegion:(NSDictionary *) dict)
 
 #pragma mark Exposed React - Ranging related methods
 
-RCT_EXPORT_METHOD(startRangingBeaconsForRegion:(NSDictionary *) dict)
+RCT_EXPORT_METHOD(startRangingBeaconsInRegion:(NSDictionary *) dict)
 {
-    [self.beaconManager startRangingBeaconsForRegion:[self convertDictToBeaconRegion:dict]];
+    [self.beaconManager startRangingBeaconsInRegion:[self convertDictToBeaconRegion:dict]];
 }
 
 RCT_EXPORT_METHOD(stopRangingBeaconsInRegion:(NSDictionary *) dict)

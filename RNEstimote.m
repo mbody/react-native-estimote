@@ -4,8 +4,8 @@
 
 #import "RCTBridge.h"
 #import "RCTLog.h"
-#import "RCTEventDispatcher.h"
 #import "RCTConvert.h"
+#import "RCTEventDispatcher.h"
 
 @interface RNEstimote() <ESTBeaconManagerDelegate>
 
@@ -156,6 +156,51 @@ RCT_EXPORT_MODULE()
         default:
             return @"";
     }
+}
+
+-(NSString *)nameForAuthorizationStatus:(CLAuthorizationStatus)authorizationStatus
+{
+    switch (authorizationStatus) {
+        case kCLAuthorizationStatusAuthorizedAlways:
+            return @"authorizedAlways";
+            
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            return @"authorizedWhenInUse";
+            
+        case kCLAuthorizationStatusDenied:
+            return @"denied";
+            
+        case kCLAuthorizationStatusNotDetermined:
+            return @"notDetermined";
+            
+        case kCLAuthorizationStatusRestricted:
+            return @"restricted";
+    }
+}
+
+
+#pragma mark Exposed React - Auth related methods
+
+RCT_EXPORT_METHOD(requestAlwaysAuthorization)
+{
+    [self.beaconManager requestAlwaysAuthorization];
+}
+
+RCT_EXPORT_METHOD(requestWhenInUseAuthorization)
+{
+    [self.beaconManager requestWhenInUseAuthorization];
+}
+
+RCT_EXPORT_METHOD(getAuthorizationStatus:resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+    resolve([self nameForAuthorizationStatus:[ESTBeaconManager authorizationStatus]]);
+}
+
+-(void)beaconManager:(ESTBeaconManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    NSString *statusName = [self nameForAuthorizationStatus:status];
+    [self.bridge.eventDispatcher sendDeviceEventWithName:@"didChangeAuthorizationStatus" body:statusName];
 }
 
 

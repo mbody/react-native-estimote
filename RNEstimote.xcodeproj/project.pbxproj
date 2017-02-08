@@ -26,6 +26,7 @@
 		134814201AA4EA6300B7C361 /* libRNEstimote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNEstimote.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE3DEC1AC21097009241FE /* RNEstimote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEstimote.h; sourceTree = "<group>"; };
 		13BE3DED1AC21097009241FE /* RNEstimote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEstimote.m; sourceTree = "<group>"; };
+		FF6FE6981E4B6225008285AF /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = ../../ios/Pods/EstimoteSDK/EstimoteSDK/EstimoteSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +54,16 @@
 				13BE3DEC1AC21097009241FE /* RNEstimote.h */,
 				13BE3DED1AC21097009241FE /* RNEstimote.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				FF6FE6971E4B6224008285AF /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		FF6FE6971E4B6224008285AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF6FE6981E4B6225008285AF /* EstimoteSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,13 +206,11 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../ios/Pods/**";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../",
+					"$(SRCROOT)/../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
@@ -214,12 +222,11 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../ios/Pods/**";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../../",
+					"$(SRCROOT)/../react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";

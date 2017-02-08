@@ -5,6 +5,7 @@
 #import "RCTBridge.h"
 #import "RCTLog.h"
 #import "RCTEventDispatcher.h"
+#import "RCTConvert.h"
 
 @interface RNEstimote() <ESTBeaconManagerDelegate>
 

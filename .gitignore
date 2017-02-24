@@ -56,4 +56,9 @@ profile
 *.moved-aside
 DerivedData
 
-.idea/
+# Android/IJ
+#
+.idea
+*.iml
+.gradle
+local.properties

@@ -1,3 +1,9 @@
+Please note the docs below are for the original fork of this repository which can be found at [https://github.com/jacobrosenthal/react-native-estimote](https://github.com/jacobrosenthal/react-native-estimote)
+
+Whilst this fork provides similar functionality, it focuses on the Beacons section of the Estimote SDK API as opposed to the Nearables functionality that the original repo focussed on. I've also wrapped a couple more bits of functionality for iOS and attempted and also added basic Android functionality.
+
+It's unlikely that I'll do any further work on this module now so feel free to fork or PR, if you find it useful.
+*****************
 react-native-estimote
 ---------------------
 React Native extensions for the [Estimote iOS SDK](https://github.com/Estimote/iOS-SDK)
